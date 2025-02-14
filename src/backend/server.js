@@ -3,7 +3,6 @@ import cors from "cors";
 import { rateLimit } from "express-rate-limit";
 import { _tts } from "./tts.js";
 
-process.loadEnvFile();
 
 const app = e();
 const limiter = rateLimit({
@@ -13,7 +12,7 @@ const limiter = rateLimit({
   legacyHeaders: false, // Disable the `X-RateLimit-*` headers.
   // store: ... , // Redis, Memcached, etc. See below.
 });
-const port = process.env.PORT || 3000;
+const port =  3000;
 
 /// middleware
 app.use(e.json());

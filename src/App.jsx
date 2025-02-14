@@ -11,7 +11,7 @@ export default function App() {
     const audioBlob = await res.blob();
     const audioURL = URL.createObjectURL(audioBlob);
 
-    // Liberar el audio anterior para evitar acumulación en memoria
+    // Liberar el audio anterior para evitar 
     if (audio) URL.revokeObjectURL(audio);
 
     setAudio(audioURL);
