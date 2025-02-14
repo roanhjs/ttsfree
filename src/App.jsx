@@ -1,12 +1,14 @@
 import { useRef, useState } from "react";
 
+
 export default function App() {
+  const apiUrl = import.meta.env.VITE_API_INTERNAL;
   const textRef = useRef(null);
   const [audio, setAudio] = useState(null);
 
   const fetchData = async (text) => {
     const res = await fetch(
-      `http://localhost:3000/ttsfree?text=${encodeURIComponent(text)}`
+      `${apiUrl}/ttsfree?text=${encodeURIComponent(text)}`
     );
     const audioBlob = await res.blob();
     const audioURL = URL.createObjectURL(audioBlob);
@@ -21,7 +23,6 @@ export default function App() {
     if (!textRef.current.value) return;
     fetchData(textRef.current.value);
   };
-
 
   return (
     <main className="w-80 h-48 border-2 rounded-md p-2 flex flex-col justify-center gap-2">

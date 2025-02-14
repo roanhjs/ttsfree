@@ -12,7 +12,7 @@ const limiter = rateLimit({
   legacyHeaders: false, // Disable the `X-RateLimit-*` headers.
   // store: ... , // Redis, Memcached, etc. See below.
 });
-const port =  3000;
+const port =  process.env.PORT || 3000;
 
 /// middleware
 app.use(e.json());
