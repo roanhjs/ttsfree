@@ -8,7 +8,8 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "serve": "node --watch --env-file=.env src/backend/server.js"
+    "serve": "node src/backend/server.js",
+    "devS": "node --watch --env-file=.env src/backend/server.js"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.0.6",
